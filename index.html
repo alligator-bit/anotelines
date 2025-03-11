@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativo de Postagens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #login-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4cae4c;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+        }
+
+        /* Ajuste para imagem proporcional e tamanho máximo de 1080x720 */
+        img {
+            max-width: 100%;  /* Imagem ajustada para a largura disponível */
+            max-height: 720px; /* Tamanho máximo de altura */
+            width: auto;       /* Largura ajustada proporcionalmente */
+            height: auto;      /* Altura ajustada proporcionalmente */
+            border-radius: 4px; /* Opcional, para borda arredondada */
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="login-container">
+        <h2>Login</h2>
+        <div id="error-message"></div>
+        <input type="text" id="username" placeholder="Usuário" required>
+        <input type="password" id="password" placeholder="Senha" required>
+        <button onclick="login()">Entrar</button>
+    </div>
+
+    <div id="feed-container" style="display: none;">
+        <h2>Feed</h2>
+        <div id="post-form" style="margin-bottom: 20px;">
+            <textarea id="post-text" placeholder="Escreva algo..."></textarea>
+            <input type="file" id="post-image" accept="image/*">
+            <button onclick="addPost()">Postar</button>
+        </div>
+        <div id="posts"></div>
+    </div>
+    <script src="javascriptloop.js"></script>
+</body>
+
+</html>
